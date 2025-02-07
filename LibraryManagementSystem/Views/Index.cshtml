@@ -1,0 +1,26 @@
+### Views
+#### Home/Index.cshtml
+```html
+@{
+    ViewData["Title"] = "Home";
+}
+<h2>Welcome to the Library Management System</h2>
+```
+
+#### Books/Index.cshtml
+```html
+@model IEnumerable<LibraryManagementSystem.Models.Book>
+<h2>Books List</h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+    </tr>
+    @foreach (var book in Model)
+    {
+        <tr>
+            <td>@book.Title</td>
+            <td>@book.Author</td>
+        </tr>
+    }
+</table>
